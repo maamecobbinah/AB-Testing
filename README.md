@@ -38,15 +38,15 @@ Ensure the integrity of the experiment by performing validity checks:
 
 ### Conduct Statistical Inference
 Apply statistical tests to evaluate the results:
-**Chi-Squared Test**: Compare proportions between the control and treatment groups (e.g., email sign-up rates).
-**T-Test**: Compare the means of the two groups to determine if the difference is statistically significant.
-**Confidence Interval (CI)**: Calculate a 95% confidence interval to determine the range within which the true effect lies.
+1. **Chi-Squared Test**: Compare proportions between the control and treatment groups (e.g., email sign-up rates).
+2. **T-Test**: Compare the means of the two groups to determine if the difference is statistically significant.
+3. **Confidence Interval (CI)**: Calculate a 95% confidence interval to determine the range within which the true effect lies.
 
 ### How to Use This Repository
 Clone the Repository
 bash
 Copy code
-git clone https://github.com/yourusername/ab-testing-urbanwear.git
+git clone 
 cd ab-testing-urbanwear
 Install Dependencies
 Ensure you have Python installed, then install the required libraries:
