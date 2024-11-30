@@ -12,7 +12,7 @@ The objective is to determine whether the green button improves email sign-up ra
 
 ### Steps for A/B Testing
 Load and Explore the Dataset
-Start by loading the dataset containing email sign-up data.
+
 
 ### Conduct exploratory analysis to understand traffic, sign-up rates, and distribution.
 State the Hypothesis
