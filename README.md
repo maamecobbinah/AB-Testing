@@ -14,7 +14,7 @@ Example: We want to test if a digital flyer on homepage increases online convers
 Choose metrics aligned with your goals (e.g., POS Sales, Demand Sales, Fulfilled Sales, Visits, TOF, BOF , conversion rate, click-through rate etc).
 Clearly define success criteria before starting.
 
-#### Pre-Analysis Setup
+### Pre-Analysis Setup
 3. **Explore the Data**
 Perform exploratory data analysis (EDA).
 Check the distribution of your key metrics (e.g., Is it normally distributed? Any outliers?).
@@ -22,14 +22,16 @@ Check the distribution of your key metrics (e.g., Is it normally distributed? An
 4. **State Your Hypotheses**
 Null Hypothesis (H₀): There is no difference between Group A and Group B.
 Alternative Hypothesis (H₁): There is a difference between Group A and Group B.
-5. Set Experimental Parameters
+
+5. **Set Experimental Parameters**
 Significance Level (α): Typically set to 0.05. This means you're willing to accept a 5% chance of incorrectly rejecting the null hypothesis (Type I error).
 Statistical Power (1 - β): Usually 0.80. This represents the likelihood of detecting a true effect (minimizing Type II error).
 Minimum Detectable Effect (MDE): The smallest effect size you consider significant (e.g., a 5% lift in conversions).
 Example:
 5% Lift → 15 days needed for statistical confidence
 10% Lift → 25 days
-6. Design Your Experiment
+
+6. **Design Your Experiment**
 Split Test Groups: Divide users into control and test groups.
 Randomization: Ensure users are randomly assigned to avoid bias. Bootstrap Sampling: Optionally use resampling for more robust simulation.
 Effect Size: Estimate how large a difference you need to detect between test and control.
