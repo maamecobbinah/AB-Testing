@@ -11,7 +11,7 @@ In A/B testing:
 It helps answer:  
 **"Does the new version create a statistically significant improvement over the existing one?"**
 
----
+
 
 ## 🧪 A/B Testing Process
 
@@ -20,14 +20,14 @@ It helps answer:
 Define the user journey and the desired change.  
 **Example**: We want to test if a digital flyer on the homepage increases online conversion.
 
----
+
 
 ### 2. Identify Your Target KPI
 
 Choose metrics aligned with your goals (e.g., POS Sales, Demand Sales, Fulfilled Sales, Visits, TOF, BOF, conversion rate, click-through rate, etc.).  
 Clearly define **success criteria** before starting.
 
----
+
 
 ### 3. Pre-Analysis Setup
 
@@ -49,7 +49,7 @@ Check the distribution of your key metrics:
     - 5% Lift → 15 days needed  
     - 10% Lift → 25 days needed
 
----
+
 
 ### 4. Design Your Experiment
 
@@ -63,7 +63,7 @@ Check the distribution of your key metrics:
 **Conclusion from Pre-Analysis**:  
 A minimum 5% change is necessary for statistically significant results within 15 days.
 
----
+
 
 ### 5. Check for Validity Threats
 
@@ -71,7 +71,7 @@ A minimum 5% change is necessary for statistically significant results within 15
 Split users into two identical groups with no changes  
 - **Purpose**: Validate randomization and system consistency
 
----
+
 
 ## 📊 Statistical Testing
 
@@ -82,7 +82,7 @@ Split users into two identical groups with no changes
 - If **normal**: Use **t-test**  
 - If **non-normal**: Use **Mann-Whitney U test**
 
----
+
 
 ## 📈 Post-Analysis
 
@@ -99,7 +99,7 @@ Split users into two identical groups with no changes
 > “There is no statistically significant difference between the test and control groups. Therefore, the new feature does not impact sales and should not be implemented.”  
 Also evaluate practical value: e.g., **ROAS**, **ROI**
 
----
+
 
 ## 🛠️ Tools You Can Use
 
@@ -108,6 +108,8 @@ Also evaluate practical value: e.g., **ROAS**, **ROI**
 - **Sample Size & Power**: `statsmodels.stats.power`
 
 
+
+---
 
 # A/B Testing for Urban Wear 🚀
 This repository contains a sample A/B test design for an e-commerce platform called Urban Wear.
