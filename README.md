@@ -1,6 +1,7 @@
 # 📊 AB Testing Methodology
 ### What is an A/B Test?
 A/B testing is a controlled experiment used to compare two versions (A and B) of a feature, product, or experience to determine which one performs better with respect to a defined objective.
+
 In A/B testing:  
 Group A is typically the control (existing version),  
 Group B is the variant (new version with changes).
@@ -27,17 +28,22 @@ Alternative Hypothesis (H₁): There is a difference between Group A and Group B
 
 5. **Set Experimental Parameters**
 Significance Level (α): Typically set to 0.05. This means you're willing to accept a 5% chance of incorrectly rejecting the null hypothesis (Type I error).
+
 Statistical Power (1 - β): Usually 0.80. This represents the likelihood of detecting a true effect (minimizing Type II error).
+
 Minimum Detectable Effect (MDE): The smallest effect size you consider significant (e.g., a 5% lift in conversions).
 Example:
 5% Lift → 15 days needed for statistical confidence
 10% Lift → 25 days
 
-6. **Design Your Experiment**
+7. **Design Your Experiment**
 Split Test Groups: Divide users into control and test groups.
 Randomization: Ensure users are randomly assigned to avoid bias. Bootstrap Sampling: Optionally use resampling for more robust simulation.
+
 Effect Size: Estimate how large a difference you need to detect between test and control.
+
 Sample Size Calculation: Use power analysis to calculate required sample size.
+
 Determine Test Duration: Based on sample size, traffic, and desired MDE determine length of time needed to achieve significance.
 
 ### Conclusion from Pre-Analysis:
@@ -45,6 +51,7 @@ A minimum 5% change is necessary for statistically significant results within 15
 
 7. **Check for Validity Threats**
 Run an A/A Test: Split users into two groups with no changes to ensure the system treats both groups identically.
+
 Purpose: Validate randomization and that there are no pre-existing differences.
 
 ### Statistical Testing
