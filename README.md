@@ -1,86 +1,111 @@
 # 📊 AB Testing Methodology
-### What is an A/B Test?
+
+## What is an A/B Test?
+
 A/B testing is a controlled experiment used to compare two versions (A and B) of a feature, product, or experience to determine which one performs better with respect to a defined objective.
 
 In A/B testing:  
-Group A is typically the control (existing version),  
-Group B is the variant (new version with changes).
-It helps answer: "Does the new version create a statistically significant improvement over the existing one?"
+- **Group A** is typically the control (existing version)  
+- **Group B** is the variant (new version with changes)  
 
+It helps answer:  
+**"Does the new version create a statistically significant improvement over the existing one?"**
 
- ### A/B Testing Process
-1. **Identify Your Business Problem**
-Define the user journey and the desired change.
-Example: We want to test if a digital flyer on homepage increases online conversion.
+---
 
-2. **Identify Your Target KPI** 
-Choose metrics aligned with your goals (e.g., POS Sales, Demand Sales, Fulfilled Sales, Visits, TOF, BOF , conversion rate, click-through rate etc).
-Clearly define success criteria before starting.
+## 🧪 A/B Testing Process
 
-### Pre-Analysis Setup
-3. **Explore the Data**
-Perform exploratory data analysis (EDA).
-Check the distribution of your key metrics (e.g., Is it normally distributed? Any outliers?).
+### 1. Identify Your Business Problem
 
-4. **State Your Hypotheses**
-Null Hypothesis (H₀): There is no difference between Group A and Group B.
-Alternative Hypothesis (H₁): There is a difference between Group A and Group B.
+Define the user journey and the desired change.  
+**Example**: We want to test if a digital flyer on the homepage increases online conversion.
 
-5. **Set Experimental Parameters**
-Significance Level (α): Typically set to 0.05. This means you're willing to accept a 5% chance of incorrectly rejecting the null hypothesis (Type I error).
+---
 
-Statistical Power (1 - β): Usually 0.80. This represents the likelihood of detecting a true effect (minimizing Type II error).
+### 2. Identify Your Target KPI
 
-Minimum Detectable Effect (MDE): The smallest effect size you consider significant (e.g., a 5% lift in conversions).
-Example:
-5% Lift → 15 days needed for statistical confidence
-10% Lift → 25 days
+Choose metrics aligned with your goals (e.g., POS Sales, Demand Sales, Fulfilled Sales, Visits, TOF, BOF, conversion rate, click-through rate, etc.).  
+Clearly define **success criteria** before starting.
 
-7. **Design Your Experiment**
-Split Test Groups: Divide users into control and test groups.
-Randomization: Ensure users are randomly assigned to avoid bias. Bootstrap Sampling: Optionally use resampling for more robust simulation.
+---
 
-Effect Size: Estimate how large a difference you need to detect between test and control.
+### 3. Pre-Analysis Setup
 
-Sample Size Calculation: Use power analysis to calculate required sample size.
+#### Explore the Data  
+Perform exploratory data analysis (EDA).  
+Check the distribution of your key metrics:  
+- Is it normally distributed?  
+- Any outliers?
 
-Determine Test Duration: Based on sample size, traffic, and desired MDE determine length of time needed to achieve significance.
+#### State Your Hypotheses  
+- **Null Hypothesis (H₀)**: There is no difference between Group A and Group B.  
+- **Alternative Hypothesis (H₁)**: There is a difference between Group A and Group B.
 
-### Conclusion from Pre-Analysis:
+#### Set Experimental Parameters  
+- **Significance Level (α)**: Typically set to `0.05`.  
+- **Statistical Power (1 - β)**: Usually `0.80`  
+- **Minimum Detectable Effect (MDE)**: Smallest effect size you consider meaningful  
+  - _Example_:  
+    - 5% Lift → 15 days needed  
+    - 10% Lift → 25 days needed
+
+---
+
+### 4. Design Your Experiment
+
+- **Split Test Groups**: Divide users into control and test groups  
+- **Randomization**: Ensure unbiased assignment  
+- **Bootstrap Sampling** _(optional)_: For robust simulation  
+- **Effect Size**: Estimate the detectable difference  
+- **Sample Size Calculation**: Use power analysis  
+- **Test Duration**: Based on traffic and MDE  
+
+**Conclusion from Pre-Analysis**:  
 A minimum 5% change is necessary for statistically significant results within 15 days.
 
-7. **Check for Validity Threats**
-Run an A/A Test: Split users into two groups with no changes to ensure the system treats both groups identically.
+---
 
-Purpose: Validate randomization and that there are no pre-existing differences.
+### 5. Check for Validity Threats
 
-### Statistical Testing
-8. **Validate Assumptions**
-Normality Test: Check metric distributions.
-Tool: Shapiro-Wilk Test (for small samples).
-Choose Statistical Test:
-If Normal: Use t-test.
-If Non-Normal: Use Mann-Whitney U test for comparing medians.
+**Run an A/A Test**:  
+Split users into two identical groups with no changes  
+- **Purpose**: Validate randomization and system consistency
 
-### Post-Analysis
-9. **Analyze the Results**
-Compute p-values and confidence intervals.
-Evaluate effect size and direction of change.
-Interpret practical significance, not just statistical significance.
+---
 
-10. **Draw Conclusions**
-Was the change statistically significant?
-Was the change practically valuable?
-Should you roll out the feature, iterate, or discard?
-Example Conclusion:
-“There is no statistically significant difference between the test and control groups. Therefore, the new feature does not impact sales and should not be implemented.”
-Also check for practical significance i.e ROAs , ROI
+## 📊 Statistical Testing
 
-### 🛠️ Tools You Can Use
-Statistical Tests: scipy.stats, statsmodels
-EDA & Visualization: pandas, matplotlib, seaborn
-Sample Size & Power: statsmodels.stats.power,
+### Validate Assumptions  
+- **Normality Test**: Use Shapiro-Wilk (for small samples)
 
+### Choose Statistical Test  
+- If **normal**: Use **t-test**  
+- If **non-normal**: Use **Mann-Whitney U test**
+
+---
+
+## 📈 Post-Analysis
+
+- Compute **p-values** and **confidence intervals**  
+- Evaluate **effect size** and **direction of change**  
+- Interpret **practical** and **statistical significance**
+
+**Draw Conclusions**  
+- Was the change statistically significant?  
+- Was it practically valuable?  
+- Should you roll out, iterate, or discard?
+
+**Example Conclusion**:  
+> “There is no statistically significant difference between the test and control groups. Therefore, the new feature does not impact sales and should not be implemented.”  
+Also evaluate practical value: e.g., **ROAS**, **ROI**
+
+---
+
+## 🛠️ Tools You Can Use
+
+- **Statistical Tests**: `scipy.stats`, `statsmodels`  
+- **EDA & Visualization**: `pandas`, `matplotlib`, `seaborn`  
+- **Sample Size & Power**: `statsmodels.stats.power`
 
 
 
