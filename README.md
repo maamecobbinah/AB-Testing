@@ -1,4 +1,4 @@
-# AB Testing Methodology
+# 📊 AB Testing Methodology
 ### What is an A/B Test?
 A/B testing is a controlled experiment used to compare two versions (A and B) of a feature, product, or experience to determine which one performs better with respect to a defined objective. In A/B testing:
 Group A is typically the control (existing version),
