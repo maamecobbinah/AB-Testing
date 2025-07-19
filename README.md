@@ -24,7 +24,7 @@ Define the user journey and the desired change.
 
 ### 2. Identify Your Target KPI
 
-Choose metrics aligned with your goals (e.g., POS Sales, Demand Sales, Fulfilled Sales, Visits, TOF, BOF, conversion rate, click-through rate, etc.).  
+Choose metrics aligned with your goals (e.g., Sales, Web Visits, Add to Cart, TOF, BOF, Order, conversion rate, click-through rate, etc.).  
 Clearly define **success criteria** before starting.
 
 
@@ -34,7 +34,7 @@ Clearly define **success criteria** before starting.
 #### Explore the Data  
 Perform exploratory data analysis (EDA).  
 Check the distribution of your key metrics:  
-- Is it normally distributed?  
+- Is it normally distributed?  **Shipiro Wilk** test to check for normality
 - Any outliers?
 
 #### State Your Hypotheses  
@@ -79,8 +79,11 @@ Split users into two identical groups with no changes
 - **Normality Test**: Use Shapiro-Wilk (for small samples)
 
 ### Choose Statistical Test  
-- If **normal**: Use **t-test**  
-- If **non-normal**: Use **Mann-Whitney U test**
+- If **normal**: Use **t-test**  for two groups  or **Anova test** for multiple groups
+- If **non-normal**: Use **Mann-Whitney U test** or **Kruskal Wallis test** for multiple groups
+#### For Binary & Categorical outcomes 
+- If **normal**: Use **Chi square test** (compare category choices)  or **Proportion Z test** (compare proportions)
+- If **non-normal**: Use **Fisher's Exact Test** (compare category choices) or **Barnards test** 
 
 
 
