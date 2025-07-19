@@ -1,0 +1,87 @@
+# 🎯 A/B Testing Randomization: Best Practices and Strategy Guide
+
+Randomization is the cornerstone of causal inference in A/B testing. Choosing the appropriate randomization strategy ensures unbiased comparisons, controls for confounding variables, and helps in obtaining statistically valid results.
+
+---
+
+## 🔑 Why Randomization Matters
+
+Randomizing improperly can result in:
+- ❌ Biased treatment and control groups  
+- ❌ Confounding effects due to time, geography, or network dependencies  
+- ❌ Inflated Type I/II errors  
+- ❌ Misleading business decisions  
+
+Well-designed randomization ensures:
+- ✅ Balance across test groups  
+- ✅ Independence of outcomes from assignment mechanism  
+- ✅ Fair attribution of treatment effects  
+
+---
+
+## ✅ Key Considerations Before Choosing a Randomization Method
+
+### 1. Data Distribution
+
+Understanding how your outcome or key segmentation metrics are distributed helps in stratifying or blocking randomization for better balance.
+
+| **Data Distribution**     | **Why It Matters**                                                                 |
+|--------------------------|-------------------------------------------------------------------------------------|
+| Normally distributed      | Basic randomization works fine; balance is naturally achieved in large N           |
+| Skewed (e.g., sales)      | Skew can lead to imbalanced groups; consider stratified or matched-pair            |
+| Small sample sizes        | Random imbalance is more likely; use matched-pair or blocked                       |
+| Correlated units (e.g., network or geo) | Contamination risk; use cluster randomization                         |
+
+---
+
+### 2. Experiment Type / Context
+
+The type of experiment determines the risk of interference, bias, or imbalance.
+
+| **Scenario**                      | **Recommended Randomization**            | **Why**                                                        |
+|----------------------------------|------------------------------------------|----------------------------------------------------------------|
+| UI changes, layout tweaks        | Simple randomization                      | Low interference, cosmetic                                    |
+| Pricing, conversion funnel       | Stratified                                | Segment-based differences (e.g., device, traffic source)      |
+| Time-sensitive rollouts          | Blocked                                   | Prevents time-based confounding                               |
+| Store or region-level impact     | Cluster                                   | Avoids contamination from geographic/social spillover         |
+| Small sample, B2B, clinical      | Matched-pair                              | Boosts power with small N                                     |
+| Live ML model optimization       | Adaptive / Multi-armed bandit             | Prioritizes best performers; not for causal inference         |
+| Sequential deployment            | Sequential randomization                  | Operational efficiency with early stopping                    |
+
+---
+
+## 🧪 Randomization Strategies and When to Use Them
+
+| **Randomization Type**      | **What It Does**                                         | **Best for Data**              | **Best for Experiment Type**             | **Notes**                                                                 |
+|----------------------------|-----------------------------------------------------------|--------------------------------|------------------------------------------|---------------------------------------------------------------------------|
+| Simple Randomization        | Randomly assigns units to groups                          | Balanced, large N              | UI tests, cosmetic tweaks                | Fast, easy, may lead to imbalance in small samples                        |
+| Stratified Randomization    | Ensures balance across pre-defined strata                | Skewed or segmented            | Pricing, funnel steps, marketing         | Balances known covariates across groups                                   |
+| Blocked Randomization       | Groups randomization within time or other blocks          | Time-varying                   | Campaigns, launches                      | Prevents bias due to time-based effects                                   |
+| Matched-Pair Randomization  | Matches units based on covariates before assignment       | Small N, high variance         | B2B, clinical, low-traffic features      | Increases power, requires good matching                                   |
+| Cluster Randomization       | Assigns entire clusters (e.g., stores) to treatment       | Correlated groups              | Store/geo-level, social networks         | Prevents spillover; reduces effective sample size                         |
+| Adaptive / Bandit           | Allocates more samples to better performers               | Any                            | Optimization experiments                 | Maximizes outcome, not ideal for causal conclusions                       |
+| Sequential Randomization    | Allows staged rollout with repeated evaluation            | Any                            | Rollouts, phased deployment              | Requires adjustment for repeated looks (e.g., alpha spending)            |
+| Bootstrap / Resampling      | Resamples data to simulate many experiments               | Any                            | Post-analysis, estimating variance       | Not a randomization method per se, used to evaluate reliability post hoc |
+
+---
+
+## 📘 References & Notes
+
+- For online experiments with social network interference, consider **cluster randomization** or network-aware designs.  
+- For rare outcomes or niche user segments (e.g., B2B), **matched-pair** and **blocking** significantly increase statistical power.  
+- **Adaptive methods** (e.g., Thompson sampling) are best suited for **optimization**, not clean hypothesis testing.
+
+---
+
+## 🧠 Summary
+
+Choose your randomization strategy based on:
+1. **Your outcome’s distribution**
+2. **Your sample size and segmentation**
+3. **Whether units are correlated**
+4. **Your experiment’s operational constraints**
+
+Well-planned randomization can be the difference between discovering real effects and drawing misleading conclusions.
+
+---
+
